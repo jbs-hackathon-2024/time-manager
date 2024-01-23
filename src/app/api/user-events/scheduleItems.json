@@ -1,0 +1,14 @@
+{
+    "scheduleItem": [
+        {
+            "start": "00:00:00",
+            "end": "00:00:00",
+            "name": "00:00:00",
+            "description": "A random class description",
+            "class": "Science",
+            "color": "#696969",
+            "type": "Assignment"
+        }
+    ],
+    "date": "2024-01-23T19:12:53.848Z"
+}
