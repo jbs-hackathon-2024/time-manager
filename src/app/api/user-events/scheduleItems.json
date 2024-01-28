@@ -3,7 +3,7 @@
         {
             "start": "00:00:00",
             "end": "00:00:00",
-            "name": "00:00:00",
+            "name": "ThingClass",
             "description": "A random class description",
             "class": "Science",
             "color": "#696969",
