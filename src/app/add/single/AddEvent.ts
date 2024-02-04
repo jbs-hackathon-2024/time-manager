@@ -6,7 +6,7 @@ export default function addEvent() {
         event_description: "",
         type: "",
         event_time: "",
-        completion_time: "",
+        completion_time: "",    
 
     });
 }

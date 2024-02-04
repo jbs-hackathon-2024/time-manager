@@ -104,10 +104,10 @@ useEffect(() => {
   }
 
   return (
-    <div className='content-center'>
+    <div className=''>
         <Link href="/">Back</Link>
-        <form method='POST'>
-          <div>
+        <form method='POST' className='ml-[40vw]'>
+          <div className=''>
             <label>Event Name</label><br></br>
             <input type='text' name='event_name' id="event_name" className="text-black" value={formData.event_name} onChange={handleInput}></input>
           </div>
