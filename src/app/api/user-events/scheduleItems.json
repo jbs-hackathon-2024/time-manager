@@ -1,13 +1,22 @@
 {
-    "scheduleItem": [
+    "scheduleItems": [
         {
             "start": "00:00:00",
             "end": "00:00:00",
-            "name": "ThingClass",
-            "description": "A random class description",
+            "name": "Some Science HW",
+            "description": "A random assignment description",
             "class": "Science",
             "color": "#696969",
             "type": "Assignment"
+        },
+        {
+            "start": "00:00",
+            "end": "00:00",
+            "name": "A Sporting event",
+            "description": "Some random sportsball game",
+            "class": "Soccer",
+            "color": "#FFFFFF",
+            "type": "Event"
         }
     ],
     "date": "2024-01-23T19:12:53.848Z"
