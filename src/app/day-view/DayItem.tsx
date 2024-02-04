@@ -1,10 +1,12 @@
 
-function DayItem(scheduleItem: any) {
+const DayItem = ({scheduleItem}: {scheduleItem: ScheduleItem}): JSX.Element => {
     return (
         <>
-        <div>
-            <p>Name: {scheduleItem.scheduleItem.name}</p>
-            <p>Start: {scheduleItem.scheduleItem.start}</p>
+        <div style={{backgroundColor: `${scheduleItem.color}`}}>
+            <p>Name: {scheduleItem.name}</p>
+            <p>Description: {scheduleItem.description}</p>
+            <p>Start: {scheduleItem.start}</p>
+            <p>End: {scheduleItem.end}</p>
         </div>
         </>
     )
