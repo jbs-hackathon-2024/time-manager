@@ -3,7 +3,8 @@ import Link from 'next/link'
 import React, { use, useEffect, useState } from 'react'
 import addEvent from './AddEvent'
 import Paper from '@mui/material/Paper';
-
+import Image from 'next/image'
+import SSF_logo from '../../public/SSF_logo.webp'
 
 
 const AddSingleAssignment = () => {
@@ -107,11 +108,11 @@ useEffect(() => {
   return (
     <div className='bg-white text-black h-screen'>
       <div className='h-[7vh] mb-[2vh] bg-[#3981e0] text-center content-center'>
-          
+        <Link href="/" className=''><Image src={SSF_logo} alt='SSF Logo' width={73} height={73} className=''></Image></Link>
       </div>
-      <Link href="/" className='mt-[2vh]'><span className='ml-[2vw] '>Back</span></Link>
+      {/* <Link href="/" className='mt-[2vh]'><span className='ml-[2vw] '>Back</span></Link> */}
       <h1 className='text-center text-4xl'>Add Assignment/Event</h1>
-      <Paper elevation={3} sx={{width: 400, p: 1}} className='m-auto mt-[7vh] rounded-md text-center bg-[#d53e37]'>
+      <Paper elevation={3} sx={{width: 400, p: 1}} className='m-auto mt-[7vh] rounded-md text-center bg-[#3981e0]'>
         <form method='POST' className=''>
             <div className='mt-[20px]'>
               <label className=''>Event Name</label><br></br>
@@ -140,7 +141,7 @@ useEffect(() => {
               <br></br>
               <input type='number' min="0" id='completion_time' name="completion_time" className="text-black rounded-md" value={timeVal} onChange={handleNumber}></input>
             </div>
-            <button type="submit" className='mt-5 bg-[#3981e0] w-[10vw] h-[5vh] rounded-md mb-[20px]'>Add Event</button>
+            <button type="submit" className='mt-5 bg-[#d53e37] w-[10vw] h-[5vh] rounded-md mb-[20px]'>Add Event</button>
         </form>
       </Paper>
     </div>
