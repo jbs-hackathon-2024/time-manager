@@ -78,6 +78,12 @@ function DayView(): JSX.Element {
               scalar: 0.7,
               startVelocity: 30,
             });
+            confetti({
+                ...defaults,
+                particleCount: 100,
+                scalar: 1.2,
+                startVelocity: 7,
+              });
           }
           
           setTimeout(shoot, 0);
