@@ -5,7 +5,7 @@ import addEvent from './AddEvent'
 import Paper from '@mui/material/Paper';
 import Image from 'next/image'
 import SSF_logo from '../../public/SSF_logo.webp'
-
+import {redirect} from 'next/navigation'
 
 const AddSingleAssignment = () => {
   const [formData, setFormData] = useState({
@@ -86,7 +86,6 @@ useEffect(() => {
       data.append(key, value);
     })
     console.log(formData)
-
     fetch(formURL, {
       method: "POST",
       body: data,
@@ -101,10 +100,11 @@ useEffect(() => {
         event_time: "",
         completion_time: "",
       })
+      redirect('/')
       setFormSuccess(true)
     })
   }
-
+  
   return (
     <div className='bg-white text-black h-screen'>
       <div className='h-[7vh] mb-[2vh] bg-[#3981e0] text-center content-center'>
@@ -112,15 +112,15 @@ useEffect(() => {
       </div>
       {/* <Link href="/" className='mt-[2vh]'><span className='ml-[2vw] '>Back</span></Link> */}
       <h1 className='text-center text-4xl'>Add Assignment/Event</h1>
-      <Paper elevation={3} sx={{width: 400, p: 1}} className='m-auto mt-[7vh] rounded-md text-center bg-[#3981e0]'>
-        <form method='POST' className=''>
+      <Paper elevation={3} sx={{width: 400, p: 1}} className='m-auto mt-[7vh] rounded-md text-center bg-[#3981e0] text-white'>
+        <form method='POST' className='' >
             <div className='mt-[20px]'>
               <label className=''>Event Name</label><br></br>
-              <input type='text' name='event_name' id="event_name" className="text-black rounded-md"  value={formData.event_name} onChange={handleInput}></input>
+              <input type='text' name='event_name' id="event_name" className="text-black rounded-md pl-3"  value={formData.event_name} onChange={handleInput}></input>
             </div>
             <div className=''>
               <label>Event Description</label><br></br>
-              <input type='text' name='event_description' id="event_description" value={formData.event_description} onChange={handleInput} className="text-black  rounded-md"></input>
+              <input type='text' name='event_description' id="event_description" value={formData.event_description} onChange={handleInput} className="text-black pl-3 rounded-md"></input>
             </div>
             <div className=''>
               <label>Type</label><br></br>
@@ -134,14 +134,14 @@ useEffect(() => {
             <div className=''>
               <label>Due Date/ Event Time</label>
               <br></br>
-              <input type='datetime-local' id='event_time' name='event_time' className="text-black rounded-md" value={dateVal} onChange={onChangeDate}></input>
+              <input type='datetime-local' id='event_time' name='event_time' className="text-black rounded-md pl-3" value={dateVal} onChange={onChangeDate}></input>
             </div>
             <div className=''>
-              <label>Estimated Completion Time</label>
+              <label>Est. Completion Time (Min.)</label>
               <br></br>
-              <input type='number' min="0" id='completion_time' name="completion_time" className="text-black rounded-md" value={timeVal} onChange={handleNumber}></input>
+              <input type='number' min="0" id='completion_time' name="completion_time" className="text-black rounded-md pl-3" value={timeVal} onChange={handleNumber}></input>
             </div>
-            <button type="submit" className='mt-5 bg-[#d53e37] w-[10vw] h-[5vh] rounded-md mb-[20px]'>Add Event</button>
+            <button type="submit" className='mt-5 bg-[#d53e37] w-[10vw] h-[5vh] rounded-md mb-[20px]'><Link href="/">Add Event</Link></button>
         </form>
       </Paper>
     </div>
