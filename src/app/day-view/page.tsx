@@ -39,7 +39,7 @@ function DayView(): JSX.Element {
         if (startStopText === "Stop") {
             let newScheduleItems = data!.data.scheduleItems.concat()
             newScheduleItems![current as number].completed = true
-            let newData = data!
+            let newData = {...data!}
             newData.data.scheduleItems = newScheduleItems
             setData(newData)
         }
@@ -48,19 +48,19 @@ function DayView(): JSX.Element {
     }
 
     return (
-        <>
-            <h1>Day view</h1>
+        <div className={styles.body}>
+            <div style={{height: "40px"}}></div>
+            <div className={styles.timerArea}>
+                <h2>Current Assignment: {currentAssignment?.name}</h2>
+                <button onClick={startStop} style={{backgroundColor: `${startStopText == "Start" ? "#16A34A" : "#DC2626"}`}}>{startStopText}</button>
+            </div>
             <div className={styles.itemList}>
                 {data?.data.scheduleItems.map(item => {
                     if (item.completed) { return }
                     return <DayItem scheduleItem={item} key={item._id} />
                 })}
             </div>
-            <div className={styles.timerArea}>
-                <h2>Current Assignment: {currentAssignment?.name}</h2>
-                <button onClick={startStop}>{startStopText}</button>
-            </div>
-        </>
+        </div>
     )
 }
 
