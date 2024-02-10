@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import logo from "@/public/logo.png";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html data-theme="light" lang="en">
       <body className={inter.className}>
         <nav>
-        <Image src={logo} alt="logo" className="navLogo"/>
+          <Link href="/"><Image src={logo} alt="logo" className="navLogo"/></Link>
         </nav>
         {children}
       </body>
