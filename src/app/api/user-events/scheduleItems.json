@@ -1,8 +1,8 @@
 {
     "scheduleItems": [
         {
-            "start": "00:00:00",
-            "end": "00:00:00",
+            "start": "00:00",
+            "end": "00:00",
             "name": "Some Science HW",
             "description": "A random assignment description",
             "class": "Science",
