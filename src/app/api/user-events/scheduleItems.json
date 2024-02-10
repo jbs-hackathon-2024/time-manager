@@ -1,23 +1,27 @@
 {
     "scheduleItems": [
         {
+            "_id": "5e2a1d7d9c6f6c0b4c3e3b7e",
             "start": "00:00",
             "end": "00:00",
             "name": "Some Science HW",
             "description": "A random assignment description",
             "class": "Science",
             "color": "#696969",
-            "type": "Assignment"
+            "type": "Assignment",
+            "completed": false
         },
         {
+            "_id": "5e2a1d7d9c6f6c0b4c3e3b7f",
             "start": "00:00",
             "end": "00:00",
             "name": "A Sporting event",
             "description": "Some random sportsball game",
             "class": "Soccer",
             "color": "#FFFFFF",
-            "type": "Event"
+            "type": "Event",
+            "completed": true
         }
     ],
-    "date": "2024-01-23T19:12:53.848Z"
+    "date": "2024-01-23T19:12:53"
 }

@@ -7,7 +7,7 @@ export async function GET(request: NextRequest, { params }: { params: { cal_id: 
     return Response.json({data})
 }
 
-export async function POST(request: Request) {
-    console.log(request)
-    return Response.json({data})
+export async function PUT(request: NextRequest) {
+    console.log(request.body)
+    return Response.json({data: {}})
 }
