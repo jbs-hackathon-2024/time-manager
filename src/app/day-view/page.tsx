@@ -2,6 +2,7 @@
 import DayItem from "./DayItem"
 import styles from "./DayView.module.css"
 import { useEffect, useState } from "react"
+import confetti from "canvas-confetti";
 
 
 function DayView(): JSX.Element {
@@ -16,12 +17,12 @@ function DayView(): JSX.Element {
 
     useEffect(() => {
         fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/user-events`)
-        .then(res => (res.json() as Promise<APIResponse>))
-        .then(resa => {
-            setData(resa)
-        })
+            .then(res => (res.json() as Promise<APIResponse>))
+            .then(resa => {
+                setData(resa)
+            })
     }, [])
-    
+
 
 
 
@@ -37,9 +38,10 @@ function DayView(): JSX.Element {
     function startStop() {
         let current = data?.data.scheduleItems.findIndex(item => item._id === currentAssignment?._id)
         if (startStopText === "Stop") {
+            displayConfetti()
             let newScheduleItems = data!.data.scheduleItems.concat()
             newScheduleItems![current as number].completed = true
-            let newData = {...data!}
+            let newData = { ...data! }
             newData.data.scheduleItems = newScheduleItems
             setData(newData)
         }
@@ -47,12 +49,48 @@ function DayView(): JSX.Element {
         startStopText === "Start" ? setStartStopText("Stop") : setStartStopText("Start")
     }
 
+
+    function displayConfetti() {
+        var defaults = {
+            spread: 360,
+            gravity: 2,
+            decay: 0.9,
+            startVelocity: 30,
+          };
+          
+          function shoot() {
+            confetti({
+              ...defaults,
+              particleCount: 400,
+              scalar: 1.2,
+              startVelocity: 40,
+            });
+            confetti({
+                ...defaults,
+                particleCount: 400,
+                scalar: 1.2,
+                startVelocity: 20,
+              });
+          
+            confetti({
+              ...defaults,
+              particleCount: 100,
+              scalar: 0.7,
+              startVelocity: 30,
+            });
+          }
+          
+          setTimeout(shoot, 0);
+          setTimeout(shoot, 50);
+          setTimeout(shoot, 100);
+    }
+
     return (
         <div className={styles.body}>
-            <div style={{height: "40px"}}></div>
+            <div style={{ height: "40px" }}></div>
             <div className={styles.timerArea}>
                 <h2>Current Assignment: {currentAssignment?.name}</h2>
-                <button onClick={startStop} style={{backgroundColor: `${startStopText == "Start" ? "#16A34A" : "#DC2626"}`}}>{startStopText}</button>
+                <button onClick={startStop} style={{ backgroundColor: `${startStopText == "Start" ? "#16A34A" : "#DC2626"}` }}>{startStopText}</button>
             </div>
             <div className={styles.itemList}>
                 {data?.data.scheduleItems.map(item => {
