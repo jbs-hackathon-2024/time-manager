@@ -14,7 +14,7 @@ function CurrentWeekRow(props: RowProps) {
     return isWithinInterval(dateToCheck, { start, end });
   };
   const isNotCurrentWeek = props.dates.every(
-    (date) => !isDateInCurrentWeek(date)
+    (date: any) => !isDateInCurrentWeek(date)
   );
   if (isNotCurrentWeek) return <></>;
   return <Row {...props} />;
