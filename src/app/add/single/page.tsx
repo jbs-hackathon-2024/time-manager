@@ -7,6 +7,7 @@ import Image from 'next/image'
 import SSF_logo from '../../public/SSF_logo.webp'
 import {redirect} from 'next/navigation'
 
+
 const AddSingleAssignment = () => {
   const [formData, setFormData] = useState({
     event_name: "",

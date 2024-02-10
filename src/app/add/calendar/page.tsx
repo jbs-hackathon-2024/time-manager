@@ -24,6 +24,7 @@ const AddCalendarSchedule = () => {
   const CLIENT_ID = 'asdfasdklfhaslk';
   const API_KEY = process.env.API_KEY
   return (
+
     <div className='h-screen bg-white'>
       <div className='h-[7vh] mb-[2vh] bg-[#3981e0] text-center content-center'>
         <Link href="/" className=''><Image src={SSF_logo} alt='SSF Logo' width={73} height={73} className=''></Image></Link>
