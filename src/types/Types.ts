@@ -1,17 +1,19 @@
 type ScheduleItem = {
-    start: String,
-    end: String,
-    name: String,
-    description: String,
-    class: String,
-    color: String,
-    type: String,
+    _id: string,
+    start: string,
+    end: string,
+    name: string,
+    description: string,
+    class: string,
+    color: string,
+    type: string,
+    completed: boolean,
 }
 
 
 type APIResponse = {
     data: {
         scheduleItems: ScheduleItem[]
-        date: String
+        date: string
     }
 }

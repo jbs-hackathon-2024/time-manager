@@ -1,16 +1,65 @@
+'use client'
 import DayItem from "./DayItem"
+import styles from "./DayView.module.css"
+import { useEffect, useState } from "react"
 
 
-async function DayView() {
-    let res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/user-events`)
-    let data = (await res.json()) as APIResponse
+function DayView(): JSX.Element {
+
+    let [data, setData] = useState(undefined as APIResponse | undefined)
+
+    let [startStopText, setStartStopText] = useState("Start")
+    let currentAssignment = getCurrentAssignemnt()
+    useEffect(() => {
+        currentAssignment = getCurrentAssignemnt()
+    }, [data])
+
+    useEffect(() => {
+        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/user-events`)
+        .then(res => (res.json() as Promise<APIResponse>))
+        .then(resa => {
+            setData(resa)
+        })
+    }, [])
+    
+
+
+
+
+    function getCurrentAssignemnt(): ScheduleItem | undefined {
+        const now = new Date();
+        const yearMonthDay = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
+        // console.log(Date.parse(`${yearMonthDay} ${data.data.scheduleItems[0].start}`), now.valueOf())
+        let current = data?.data.scheduleItems.find(item => (Date.parse(`${yearMonthDay} ${item.start}`) < now.valueOf()) && !item.completed)
+        return current
+    }
+
+    function startStop() {
+        let current = data?.data.scheduleItems.findIndex(item => item._id === currentAssignment?._id)
+        if (startStopText === "Stop") {
+            let newScheduleItems = data!.data.scheduleItems.concat()
+            newScheduleItems![current as number].completed = true
+            let newData = data!
+            newData.data.scheduleItems = newScheduleItems
+            setData(newData)
+        }
+
+        startStopText === "Start" ? setStartStopText("Stop") : setStartStopText("Start")
+    }
 
     return (
         <>
-        <h1>Day view</h1>
-        {data.data.scheduleItems.map((item: any) => (
-            <DayItem scheduleItem={item}/>
-        ))}
+            <h1>Day view</h1>
+            <div className={styles.itemList}>
+                {data?.data.scheduleItems.map(item => {
+                    if (item.completed) { return }
+                    return <DayItem scheduleItem={item} key={item._id} />
+                })}
+            </div>
+            <div className={styles.timerArea}>
+                <h2>Current Assignment: {currentAssignment?.name}</h2>
+                <button onClick={startStop}>{startStopText}</button>
+            </div>
         </>
     )
 }
