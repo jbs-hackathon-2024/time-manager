@@ -1,26 +1,92 @@
 {
     "scheduleItems": [
         {
-            "_id": "5e2a1d7d9c6f6c0b4c3e3b7e",
-            "start": "00:00",
-            "end": "00:00",
-            "name": "Some Science HW",
-            "description": "A random assignment description",
-            "class": "Science",
-            "color": "#696969",
+            "_id": "f6b1e4e3-6a8d-4e6e-9e7a-1e2c3d4f5a6b",
+            "start": "08:00",
+            "end": "09:30",
+            "name": "Study for Math Quiz",
+            "description": "A quiz on algebra",
+            "class": "Math",
+            "color": "#DC2626",
             "type": "Assignment",
             "completed": false
         },
         {
-            "_id": "5e2a1d7d9c6f6c0b4c3e3b7f",
-            "start": "00:00",
-            "end": "00:00",
-            "name": "A Sporting event",
-            "description": "Some random sportsball game",
-            "class": "Soccer",
+            "_id": "a2b3c4d5-e6f7-8g9h-1i2j3k4l5m6n",
+            "start": "9:30",
+            "end": "10:30",
+            "name": "English Essay",
+            "description": "Write an essay on a book",
+            "class": "English",
+            "color": "#78716C",
+            "type": "Assignment",
+            "completed": false
+        },
+        {
+            "_id": "o1p2q3r4-s5t6-u7v8-w9x0-y1z2a3b4c5d6",
+            "start": "10:30",
+            "end": "10:45",
+            "name": "Break",
+            "description": "Take a well deserved break!",
+            "class": "Break",
             "color": "#FFFFFF",
-            "type": "Event",
-            "completed": true
+            "type": "Break",
+            "completed": false
+        },
+        {
+            "_id": "d7e8f9g0-h1i2j3k4-l5m6n7o8p9q",
+            "start": "10:45",
+            "end": "11:15",
+            "name": "Make History Presentation",
+            "description": "Present a historical event",
+            "class": "History",
+            "color": "#A855F7",
+            "type": "Assignment",
+            "completed": false
+        },
+        {
+            "_id": "r1s2t3u4-v5w6-x7y8-z9a0b1c2d3e4",
+            "start": "11:15",
+            "end": "11:45",
+            "name": "Physics Lab",
+            "description": "Perform experiments in the lab",
+            "class": "Physics",
+            "color": "#22C55E",
+            "type": "Assignment",
+            "completed": false
+        },
+        {
+            "_id": "f5g6h7i8-j9k0l1m2-n3o4p5q6r7s",
+            "start": "6:00",
+            "end": "7:30",
+            "name": "Computer Science Project",
+            "description": "Develop a web application",
+            "class": "Computer Science",
+            "color": "#3B82F6",
+            "type": "Assignment",
+            "completed": false
+        },
+        {
+            "_id": "t5u6v7w8-x9y0z1a2b3c",
+            "start": "7:30",
+            "end": "7:50",
+            "name": "Break",
+            "description": "Take a well deserved break!",
+            "class": "Break",
+            "color": "#FFFFFF",
+            "type": "Break",
+            "completed": false
+        },
+        {
+            "_id": "d4e5f6g7-h8i9j0k1-l2m3n4o5p6q",
+            "start": "7:50",
+            "end": "8:00",
+            "name": "Biology Test",
+            "description": "A test on cellular respiration",
+            "class": "Biology",
+            "color": "#22C55E",
+            "type": "Test",
+            "completed": false
         }
     ],
     "date": "2024-01-23T19:12:53"

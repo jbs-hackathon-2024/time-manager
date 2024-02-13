@@ -19,7 +19,10 @@ function DayView(): JSX.Element {
         fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/user-events`)
             .then(res => (res.json() as Promise<APIResponse>))
             .then(resa => {
-                setData(resa)
+                var thing = resa.data.scheduleItems.sort((a, b) => {
+                    return Date.parse(`1970/01/01 ${a.start}`) - Date.parse(`1970/01/01 ${b.start}`)
+                })
+                setData({data: {date: resa.data.date, scheduleItems: thing}})
             })
     }, [])
 
