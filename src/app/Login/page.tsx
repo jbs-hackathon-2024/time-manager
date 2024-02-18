@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import './page.css';
 import Paper from '@mui/material/Paper'
+import Link from "next/link"
 
 
 const Login = () => {
@@ -29,9 +30,9 @@ const Login = () => {
             <input value={email} type="email" placeholder="youremail@gmail.com" id="email" name="email"  className="objects" onChange={(e) => setEmail(e.target.value)}/>
             <label htmlFor="password" className="label">Password</label>
             <input   value={pass} type="password" placeholder="********" id="password" name="password"  className="objects" onChange={(e) => setPass(e.target.value)} />
-            <button type="submit" className="objects redBtns">Log in</button>
+            <button type="submit" className="objects redBtns"><Link href="/git ">Log in</Link></button>
             </form>
-            <button className="Reg-Btn objects " >Don't have an account? Register here!</button></>
+            <button className="Reg-Btn objects" ><Link href="/register">Don't have an account? Register here!</Link></button></>
             </Paper>
         </div>
     )
