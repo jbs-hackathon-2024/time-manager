@@ -4,8 +4,14 @@ import React, { useState } from "react";
 import { DayPicker, Row, RowProps } from "react-day-picker";
 import { endOfWeek, isWithinInterval, startOfWeek, format } from "date-fns";
 import { Plus } from "react-feather";
-import "react-day-picker/dist/style.css";
 
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
+import "react-day-picker/dist/style.css";
+import { Fab } from "@mui/material";
+import Link from "next/link";
 function CurrentWeekRow(props: RowProps) {
   const isDateInCurrentWeek = (dateToCheck: Date) => {
     const today = new Date();
@@ -27,7 +33,14 @@ const Dashboard = () => {
   if (selected) {
     footer = <p>You picked <span className="text-primary font-semibold">{format(selected, "PP")}</span></p>;
   }
-
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <div className="min-h-screen flex justify-center items-center">
       <div className="flex flex-col items-center"></div>
@@ -44,9 +57,32 @@ const Dashboard = () => {
             components={{ Row: CurrentWeekRow }}
             showOutsideDays
           />
+          <Fab
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+          >
+            <Plus />
+          </Fab>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          >
+            <MenuItem onClick={handleClose}><Link href="/add/single">Single Assignment</Link></MenuItem>
+            <MenuItem onClick={handleClose}><Link href="/add/calendar">Calendar Link</Link></MenuItem>
+            {/* <MenuItem onClick={handleClose}>Logout</MenuItem> */}
+          </Menu>
+{/*           
           <button className="btn btn-primary btn-circle">
             <Plus />
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
