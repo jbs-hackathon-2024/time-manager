@@ -11,7 +11,10 @@ import MenuItem from '@mui/material/MenuItem';
 
 import "react-day-picker/dist/style.css";
 import { Fab } from "@mui/material";
+// import makeStyles from '@mui/styles/makeStyles';
 import Link from "next/link";
+// import { makeStyles } from '@mui/styles';
+
 function CurrentWeekRow(props: RowProps) {
   const isDateInCurrentWeek = (dateToCheck: Date) => {
     const today = new Date();
@@ -25,6 +28,8 @@ function CurrentWeekRow(props: RowProps) {
   if (isNotCurrentWeek) return <></>;
   return <Row {...props} />;
 }
+
+
 
 const Dashboard = () => {
   const [selected, setSelected] = useState<Date>(new Date());
@@ -41,6 +46,15 @@ const Dashboard = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  // const classes = makeStyles({
+  //   addButton: {
+  //     color: "primary",
+  //     backgroundColor: "red",
+  //     "&:hover": {
+  //     backgroundColor: "yellow"
+  //   }
+  //   },
+  // });
   return (
     <div className="min-h-screen flex justify-center items-center">
       <div className="flex flex-col items-center"></div>
@@ -59,10 +73,12 @@ const Dashboard = () => {
           />
           <Fab
             id="basic-button"
+            className="bg-sky-400 hover:bg-sky-500"
             aria-controls={open ? 'basic-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
+            // sx={{ backgroundColor: "blue", color: "primary" }}
           >
             <Plus />
           </Fab>
