@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
-import logo from "@/public/logo.png";
+import Image from "next/image"; 
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +20,14 @@ export default function RootLayout({
     <html data-theme="light" lang="en">
       <body className={inter.className}>
         <nav>
-          <Link href="/"><Image src={logo} alt="logo" className="navLogo"/></Link>
+          <Link href="/"><Image src={'/logo.png'} width={392} height={158} alt="logo" className="navLogo" /></Link>
+          <div className="rightNav">
+            <Link href="/day-view">Tasks</Link>
+            <Link href="/dashboard">Dashboard</Link>
+            <Link href="/register">Register</Link>
+            <Link href="/login">Login</Link>
+            <Link href="/register">Register</Link>
+          </div>
         </nav>
         {children}
       </body>

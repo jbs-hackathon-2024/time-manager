@@ -16,12 +16,45 @@ body {
 nav {
   height: 64px;
   background-color: #3981E0;
+  overflow: hidden;
 }
 
 .navLogo {
   height: 100%;
   width: auto;
+  float: left;
 }
+
+.rightNav {
+  float: right;
+  color: white;
+  vertical-align: middle;
+  line-height: 64px;
+  font-size: 16pt;
+  margin-right: 8px;
+}
+
+.rightNav a {
+  padding-top: 100%;
+  padding-bottom: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+
+.rightNav a:hover {
+  animation: raiseBackground 1s forwards;
+  color: #3981E0;
+}
+
+@keyframes raiseBackground {
+  100% {
+    background-color: white;
+  }
+}
+  
+
+
 
 @layer utilities {
   .text-balance {
