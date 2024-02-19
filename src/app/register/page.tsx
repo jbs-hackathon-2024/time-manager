@@ -55,37 +55,41 @@ const Register = () => {
 />*/
 
     return (
-        <>
+        <div className = "h-full">
 
         <h2 >Register for FocusAI</h2>
         <div className="box">
 
+            <div className="section"></div>
         <form onSubmit={handleSubmit}>
 
-<div className="buh"></div>
-
                 <div>
-
-                   <label htmlFor="email" >Email:<br></br></label>
+                    Email
+                    <div className='email'>
                     <input value={email} type="email" placeholder="youremail@gmail.com" id="email" name="email" onChange={(e) => setEmail(e.target.value)} />
+                    </div>
                 </div>
 
 
             <div>
-
-                    <label htmlFor="password">Password: <br></br></label>
+                Password
+                    <div className='password'>
                     <input value={pass} type="password" placeholder="********" id="password" name="password" onChange={(e) => setPass(e.target.value)} />
-
+                    </div>
             </div>
 
             <div>
-                <label htmlFor="bedtime">What is your bedtime</label>
+            What is your bedtime?
+                <div className='bedtime'>
                 <input value={bedtime} type='time' placeholder='24:00 00' id='bedtime' name='bedtime' onChange={(e) => setBedtime(e.target.value)} ></input>
+                </div>
             </div>
 
             <div>
-                <label htmlFor='starttime' >Start time:</label>
+                Start time
+                <div className='startTime'>
                 <input value={starttime} type='time' placeholder='30' id='starttime' name='starttime' onChange={(e) => setStartTime(e.target.value)}></input>
+                </div>
             </div>
 
             {/* Code for what time they start work */}
@@ -93,66 +97,54 @@ const Register = () => {
 
 
             <div>
-                <label htmlFor='math'>Math</label>
-                <input value={math} type='number' placeholder='0: 30 00' id='math' name='math' onChange={(e) => setmathtime(e.target.value)}></input>
+                How many minutes does math take?
+                <div className='math'>
+                <input value={math} type='number' placeholder='0: 30 ' id='math' name='math' onChange={(e) => setmathtime(e.target.value)}></input>
+                </div>
             </div>
 
             <div>
-                <label htmlFor='science'>Science</label>
-                <input value={science} type="time" placeholder='0: 30 00' id='science' name='science' onChange={(e) => setscitime(e.target.value)}/>
+                How many minutes does science take?
+                <div className="science">
+                <input value={science} type="number" placeholder='0: 30' id='science' name='science' onChange={(e) => setscitime(e.target.value)}/>
+                </div>
                 </div>
 
             <div>
-                <label htmlFor='english'>English</label>
-                <input value={english} type="time" placeholder='0: 30' id='english' name='english' onChange={(e) => setengtime(e.target.value)}/>
+                How many minutes does english take?
+                <div className="english">
+                <input value={english} type="number" placeholder='0: 30' id='english' name='english' onChange={(e) => setengtime(e.target.value)}/>
+                </div>
             </div>
 
             <div>
-                <label htmlFor='history'>History</label>
-                <input value={history} type='time' placeholder='0:30 00' id='history' name='history' onChange={(e) => sethisttime(e.target.value)}/>
+                How many minutes does history take?
+                <div className="history">
+                <input value={history} type='number' placeholder='0:30' id='history' name='history' onChange={(e) => sethisttime(e.target.value)}/>
+                </div>
                 </div>
 
             <div>
-                <label htmlFor='language'>Language</label>
-                <input value={language} type='time' placeholder='0: 30 00' id='language' name='language' onChange={(e) => setlangtime(e.target.value)}/>
+                How many minutes does your language take?
+                <div className="language">
+                <input value={language} type='number' placeholder='0: 30' id='language' name='language' onChange={(e) => setlangtime(e.target.value)}/>
+                </div>
             </div>
 
-            <label htmlFor='preferedHW' >Prefered homework order: <br></br></label>
+            <label htmlFor='preferedHW' ><br></br></label>
 
-            <fieldset>
-  <legend>1st subject you work on:</legend>
 
-  <div>
-        <label htmlFor = "Math" >Math</label>
-        <input type="radio" id="math" name= "time" value="math" checked />
-  </div>
-
-  <div>
-        <label htmlFor ="science">Science</label>
-        <input type="radio" id="science" name="time" value="science" />
-  </div>
-
-  <div>
-    <label htmlFor = "english">English</label>
-    <input type="radio" id="english" name="time" value="english" />
-  </div>
-  <div>
-    <label htmlFor = "history">History</label>
-    <input type="radio" id="history" name="time" value="history" />
-  </div>
-</fieldset>
 
             <div className='centerBut'>
 
-            <button className='loginBut' type="submit">Log in</button>
+            <button className='loginBut' type="submit">Register</button>
+
             </div>
-
-
 
         </form>
 
         </div>
-        </>
+        </div>
 
     )
 
