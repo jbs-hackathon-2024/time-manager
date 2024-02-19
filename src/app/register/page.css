@@ -1,0 +1,40 @@
+body {
+    color: white;
+}
+
+.box {
+    background-color: #3981e0;
+    display: block;
+    margin: auto;
+    width: 60%;
+    margin-top: 40px;
+    padding: 16px;
+    border-radius: 4px;
+    color: white;
+}
+
+.box * {
+    margin: 4px
+}
+
+h2 {
+    text-align: center;
+    margin: 50px;
+    font-size: 24pt;
+}
+
+.loginBut {
+    background-color: #d53e37;
+    border-radius: 4px;
+    padding: 10px;
+    display: block;
+    margin: auto;
+}
+
+
+/*page.tsx.loginBut.email {
+    background-color: #ffffff;
+    color: #d53e37;
+    margin: 400px;
+    text-decoration-color: black;
+}*/
