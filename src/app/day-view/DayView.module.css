@@ -1,0 +1,42 @@
+.header {
+    padding: 10px;
+    text-align: center;
+    font-size: 36pt;
+}
+
+.itemList {
+    float: left;
+    width: 70%;
+}
+
+.timerArea {
+    float: left;
+    width: 30%;
+}
+.timerArea h2 {
+    font-size: 24pt;
+    text-align: center;
+}
+.timerArea button {
+    width: 80%;
+    margin: auto;
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18pt;
+    color: white;
+}
+
+.scheduleItem {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.scheduleItem h3{
+    font-size: 18pt;
+}
+
+.scheduleItem p{
+    font-size: 18pt;
+}

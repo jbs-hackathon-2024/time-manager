@@ -8,23 +8,53 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body {
+  background: white;
+  color: black;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+nav {
+  height: 64px;
+  background-color: #3981E0;
+  overflow: hidden;
 }
+
+.navLogo {
+  height: 100%;
+  width: auto;
+  float: left;
+}
+
+.rightNav {
+  float: right;
+  color: white;
+  vertical-align: middle;
+  line-height: 64px;
+  font-size: 16pt;
+  margin-right: 8px;
+}
+
+.rightNav a {
+  padding-top: 100%;
+  padding-bottom: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+
+.rightNav a:hover {
+  animation: raiseBackground 1s forwards;
+  color: #3981E0;
+}
+
+@keyframes raiseBackground {
+  100% {
+    background-color: white;
+  }
+}
+  
+
+
 
 @layer utilities {
   .text-balance {
