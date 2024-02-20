@@ -1,0 +1,87 @@
+body {
+    color: white;
+}
+
+.box {
+    background-color: #3981e0;
+    display: block;
+    margin: auto;
+    width: 60%;
+    margin-top: 0px;
+    padding: 0x;
+    border-radius: 4px;
+    color: white;
+    align-items: center;
+    height: 93vh;
+}
+
+.box * {
+    margin: 4px
+}
+
+.email {
+    color: black;
+}
+
+.password {
+    color: black;
+}
+
+.bedtime {
+    color: black;
+}
+
+.startTime {
+    color: black;
+}
+
+.math {
+    color: black;
+}
+
+.science {
+    color: black;
+}
+
+.english {
+    color: black;
+}
+
+.history {
+    color: black;
+}
+
+.language {
+    color: black;
+}
+
+h2 {
+    text-align: center;
+    margin: 50px;
+    font-size: 24pt;
+    color: #d53e37;
+}
+
+.goToLogin {
+    background-color: #d53e37;
+    border-radius: 4px;
+    padding: 10px;
+    display: block;
+    margin: auto;
+}
+
+.loginBut {
+    background-color: #d53e37;
+    border-radius: 4px;
+    padding: 10px;
+    display: block;
+    margin: auto;
+}
+
+
+/*page.tsx.loginBut.email {
+    background-color: #ffffff;
+    color: #d53e37;
+    margin: 400px;
+    text-decoration-color: black;
+}*/
