@@ -6,7 +6,7 @@ import { getClassNames } from './canvasAPI.mjs';
 export async function organizeScheduleWithGPT(icalData, presetSchedule) {
   try {
     const openai = new OpenAI({
-      apiKey: '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'
+      apiKey: process.env.OPENAI_KEY
     });
 
     const tasksStr = JSON.stringify(icalData);
@@ -41,7 +41,7 @@ export async function organizeScheduleWithGPT(icalData, presetSchedule) {
           },
           ...
         ],
-        "date": "YYYY-MM-DD"
+        "date": iso 8601 format
       },
       ...
     ],
@@ -80,17 +80,17 @@ export async function organizeScheduleWithGPT(icalData, presetSchedule) {
     console.log("Initial run status:", runStatus.status);
 
     while (runStatus.status !== 'completed' && attempt < maxAttempts) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        runStatus = await openai.beta.threads.runs.retrieve(thread.id, run.id);
-        console.log(`Attempt ${attempt + 1}: Current status - ${runStatus.status}`);
-        
-        if (runStatus.status === 'failed') {
-            console.error("Run failed:", runStatus);
-            break; 
-        }
-
-        attempt++;
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      runStatus = await openai.beta.threads.runs.retrieve(thread.id, run.id);
+      console.log(`Attempt ${attempt + 1}: Current status - ${runStatus.status}`);
+      
+      if (runStatus.status === 'failed') {
+          console.error("Run failed:", runStatus);
+          break; 
       }
+
+      attempt++;
+    }
 
     if (attempt >= maxAttempts) {
         console.error("Maximum attempts reached without completion.");
