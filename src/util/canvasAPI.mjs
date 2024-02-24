@@ -1,10 +1,10 @@
 import fetch from 'node-fetch';
 
 const canvasBaseUrl = 'https://jburroughs.instructure.com/api/v1';
-const accessToken = '8302~L8Akh0FhoB2Mr9YY7Gxd0M2C944Z56qro9RmBSQsDi28xkqnHk7SzbfTyIvwjgPv'; 
+const accessToken = process.env.CANVAS_KEY;
 
-async function listYourCourses() {
-    const response = await fetch(`${canvasBaseUrl}/courses?enrollment_state=active`, {
+export async function listYourCourses() {
+    const response = await fetch(`${canvasBaseUrl}/courses?enrollment_state=active&per_page=50`, {
         headers: { 'Authorization': `Bearer ${accessToken}` }
     });
     const courses = await response.json();
@@ -13,12 +13,25 @@ async function listYourCourses() {
         name: course.name,
         calendarUrl: course.calendar ? course.calendar.ics : 'No calendar URL'
     }));
-    //console.log(courses);
     console.log('Calendar URLs:', calendarUrls);
     return courses;
 }
 
-async function getAssignmentsForCourse(courseId) {
+export async function getClassNames(){
+    const response = await fetch(`${canvasBaseUrl}/courses?enrollment_state=active&per_page=50`, {
+        headers: { 'Authorization': `Bearer ${accessToken}` }
+    });
+    const courses = await response.json();
+
+    const courseNames = courses.map(course => ({
+        name: course.name,
+    }));
+    //console.log(courses);
+    //console.log('Course names:', JSON.stringify(courseNames));
+    return courses;
+}
+
+export async function getAssignmentsForCourse(courseId) {
     const response = await fetch(`${canvasBaseUrl}/courses/${courseId}/assignments`, {
         headers: { 'Authorization': `Bearer ${accessToken}` }
     });
@@ -33,7 +46,6 @@ async function getAssignmentsForCourse(courseId) {
 }
 
 
-
-
 listYourCourses();
+//getClassNames();
 //getAssignmentsForCourse('6758'); 
