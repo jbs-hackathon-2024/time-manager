@@ -1,0 +1,132 @@
+[
+  {
+    "scheduleItems": [
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-11T18:00",
+        "end": "2024-02-11T18:45",
+        "name": "Work on the list of 40 integrals",
+        "description": "Work on the list of 40 integrals for Math class.",
+        "class": "Math",
+        "color": "#FF0000",
+        "type": "Assignment",
+        "completed": false
+      },
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-12T18:00",
+        "end": "2024-02-12T18:45",
+        "name": "Finish the list of 40 integrals",
+        "description": "Finish the list of 40 integrals assignment for Math class.",
+        "class": "Math",
+        "color": "#FF0000",
+        "type": "Assignment",
+        "completed": false
+      },
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-11T14:00",
+        "end": "2024-02-11T14:45",
+        "name": "Rosa Lee Chapter 1, pp. vii-26",
+        "description": "Read and study Rosa Lee Chapter 1, pp. vii-26 for Urban Issues and Design class.",
+        "class": "Urban Issues and Design",
+        "color": "#808080",
+        "type": "Assignment",
+        "completed": false
+      }
+    ],
+    "date": "2024-02-11"
+  },
+  {
+    "scheduleItems": [
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-12T14:00",
+        "end": "2024-02-12T14:45",
+        "name": "Rosa Lee, Prologue & Chapter 1",
+        "description": "Read and study Rosa Lee, Prologue & Chapter 1 for Urban Issues and Design class.",
+        "class": "Urban Issues and Design",
+        "color": "#808080",
+        "type": "Assignment",
+        "completed": false
+      },
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-12T22:00",
+        "end": "2024-02-12T22:45",
+        "name": "AP Classroom - FRQ1 Practice",
+        "description": "Complete AP Classroom - FRQ1 Practice - Methods and Control Structures assignment for APCS class.",
+        "class": "AP Computer Science",
+        "color": "#800080",
+        "type": "Assignment",
+        "completed": false
+      }
+    ],
+    "date": "2024-02-12"
+  },
+  {
+    "scheduleItems": [
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-13T22:00",
+        "end": "2024-02-13T22:45",
+        "name": "FRQ1 Quiz",
+        "description": "Prepare for the FRQ1 Quiz in APCS class.",
+        "class": "AP Computer Science",
+        "color": "#800080",
+        "type": "Study Session",
+        "completed": false
+      },
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-13T14:30",
+        "end": "2024-02-13T15:15",
+        "name": "Edpuzzle | Organ Transplants",
+        "description": "Complete Edpuzzle assignment on Organ Transplants for Bioethics class.",
+        "class": "Bioethics",
+        "color": "#008000",
+        "type": "Assignment",
+        "completed": false
+      },
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-13T14:30",
+        "end": "2024-02-13T15:15",
+        "name": "Edpuzzle | Why More Than 100,000 Americans Are Waiting For Organs",
+        "description": "Complete Edpuzzle assignment on organ donation for Bioethics class.",
+        "class": "Bioethics",
+        "color": "#008000",
+        "type": "Assignment",
+        "completed": false
+      }
+    ],
+    "date": "2024-02-13"
+  },
+  {
+    "scheduleItems": [
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-15T14:00",
+        "end": "2024-02-15T14:45",
+        "name": "Rosa Lee Chapter 2, pp. 37-52",
+        "description": "Study Rosa Lee Chapter 2, pp. 37-52 for Urban Issues and Design class.",
+        "class": "Urban Issues and Design",
+        "color": "#808080",
+        "type": "Assignment",
+        "completed": false
+      },
+      {
+        "_id": "unique identifier",
+        "start": "2024-02-15T14:30",
+        "end": "2024-02-15T15:15",
+        "name": "Edpuzzle |  Understanding ATTR Amyloidosis",
+        "description": "Complete Edpuzzle assignment on amyloidosis for Bioethics class.",
+        "class": "Bioethics",
+        "color": "#008000",
+        "type": "Assignment",
+        "completed": false
+      }
+    ],
+    "date": "2024-02-15"
+  }
+]
