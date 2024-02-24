@@ -22,7 +22,7 @@ const Login = () => {
     return (
         <div className="stuff">
             <h1 className="title">Sign in to FocusAI</h1>
-            <Paper elevation={3} className="box">
+            <Paper elevation={3} className="box" sx={{height: 500}}>
             <>
             
             <form className="login-Form" onSubmit={handleSubmit}>

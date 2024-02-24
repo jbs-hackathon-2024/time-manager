@@ -20,7 +20,7 @@ export default function RootLayout({
     <html data-theme="light" lang="en">
       <body className={inter.className}>
         <nav>
-          <Link href="/"><Image src={'/logo.png'} width={392} height={158} alt="logo" className="navLogo" /></Link>
+          <Link href="/dashboard"><Image src={'/logo.png'} width={392} height={158} alt="logo" className="navLogo" /></Link>
           <div className="rightNav">
             <Link href="/day-view">Tasks</Link>
             <Link href="/dashboard">Dashboard</Link>
